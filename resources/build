@@ -10,6 +10,11 @@ apk add --no-cache curl
 curl https://github.com/kubernetes/kops/releases/download/${KOPS_VERSION}/kops-linux-amd64 > /bin/kops 
 chmod +x /bin/kops
 ###
+# Creating kops user
+###
+addgroup kops
+adduser -h /data -s /bin/sh -G kops -D kops
+###
 # Cleaning image
 ###
 rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
