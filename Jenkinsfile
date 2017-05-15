@@ -39,7 +39,7 @@ node {
       }
       stage("test") {
         // Testing Image Works
-        sh "docker run ${dockerhub_repo}:${tag_id} version"
+        sh "docker run ${dockerhub_repo}:${tag_id} version && kubectl --version"
         sh "docker inspect ${dockerhub_repo}:${tag_id}"
         message = "Docker build is successfull"
       }
