@@ -1,6 +1,7 @@
 FROM alpine:3.5
 
-ENV KOPS_VERSION=1.5.3
+ENV KOPS_VERSION=1.5.3 \
+    KUBECTL_VERSION=1.6.3
     
 ARG BUILD_DATE
 ARG VCS_REF
@@ -28,6 +29,7 @@ LABEL "maintainer"="cloudsquad@fxinnovation.com" \
       "org.label-schema.vendor"="FXinnovation" \
       "org.label-schema.schema-version"="1.0.0-rc.1" \
       "org.label-schema.applications.kops.version"=$KOPS_VERSION \
+      "org.label-schema.applications.kubectl.version"=$KUBECTL_VERSION \
       "org.label-schema.vcs-ref"=$VCS_REF \
       "org.label-schema.version"=$VERSION \
       "org.label-schema.build-date"=$BUILD_DATE \
