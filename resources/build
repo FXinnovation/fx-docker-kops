@@ -1,0 +1,16 @@
+#!/bin/sh
+set -x -e
+###
+# Adding curl
+###
+apk add --no-cache curl
+###
+# Installing kops
+###
+curl https://github.com/kubernetes/kops/releases/download/${KOPS_VERSION}/kops-linux-amd64 > /bin/kops 
+chmod +x /bin/kops
+###
+# Cleaning image
+###
+rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+apk del curl
