@@ -7,7 +7,7 @@ apk add --no-cache curl
 ###
 # Installing kops
 ###
-curl https://github.com/kubernetes/kops/releases/download/${KOPS_VERSION}/kops-linux-amd64 > /bin/kops 
+curl -L https://github.com/kubernetes/kops/releases/download/${KOPS_VERSION}/kops-linux-amd64 > /bin/kops 
 chmod +x /bin/kops
 ###
 # Creating kops user
