@@ -3,7 +3,7 @@ set -x -e
 ###
 # Adding curl
 ###
-apk add --no-cache curl
+apk add --no-cache curl ca-certificates
 ###
 # Installing kops
 ###
